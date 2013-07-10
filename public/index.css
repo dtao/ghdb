@@ -1,0 +1,39 @@
+#editor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+}
+
+#toolbar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
+  padding: 8px;
+  background-color: #000;
+  opacity: 0.5;
+  line-height: 60px;
+  text-align: right;
+  z-index: 10;
+}
+
+#toolbar:hover {
+  opacity: 1.0;
+}
+
+#toolbar button {
+  min-width: 80px;
+  padding: 12px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#toolbar button:hover {
+  background-color: #def;
+}
