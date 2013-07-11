@@ -39,6 +39,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
+    randy (0.0.1)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -57,5 +58,6 @@ DEPENDENCIES
   foreman
   github_api
   haml
+  randy
   sinatra
   thin

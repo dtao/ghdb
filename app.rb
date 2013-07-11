@@ -1,3 +1,4 @@
+require 'randy'
 require 'github_api'
 require 'sinatra'
 
@@ -10,7 +11,14 @@ get '/' do
 end
 
 post '/' do
-end
+  halt 'Message and content are required.' unless params['message'] && params['content']
 
-post '/:filename' do
+  filename = Randy.string(20)
+  @github.repos.contents.create 'dtao', 'ghdb', "db/#{filename}", {
+    :path    => "db/#{filename}",
+    :message => params['message'],
+    :content => params['content']
+  }
+
+  filename
 end
