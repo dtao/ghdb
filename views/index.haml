@@ -7,7 +7,12 @@
     %script(type="text/javascript" src="/index.js")
 
   %body
-    #editor
+    %form(method="POST" style="display: none;")
+      %input(type="text" name="message")
+      %textarea(name="content")
+
+    %pre#editor= @content
+
     #toolbar
       %button#save Save
       %button#new New

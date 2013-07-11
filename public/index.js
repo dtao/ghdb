@@ -20,24 +20,14 @@ window.addEventListener('load', function() {
       return;
     }
 
-    var request = new XMLHttpRequest();
-
-    request.open('POST', '/');
-    request.addEventListener('progress', function() {
-      if (request.readyState === 4) {
-        alert(request.responseText);
-      }
-    });
-
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(dataToQueryStr({
-      message: message,
-      content: editor.getValue()
-    }));
+    var form = document.querySelector('form');
+    form.querySelector("input[name='message']").value = message;
+    form.querySelector("textarea[name='content']").value = editor.getValue();
+    form.submit();
   });
 
   var newButton = document.getElementById('new');
   newButton.addEventListener('click', function() {
-    editor.setValue('');
+    window.location = '/';
   });
 });
